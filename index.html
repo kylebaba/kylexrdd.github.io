@@ -1,46 +1,29 @@
-                                        
-                                        
-                                        
-                           ##        ## 
-                           ##        ## 
-                           ##        ## 
- ###  ###   ##.####   :###.##   :###.## 
-  ##::##    #######  :#######  :####### 
-  :####:    ###.     ###  ###  ###  ### 
-   ####     ##       ##.  .##  ##.  .## 
-   :##:     ##       ##    ##  ##    ## 
-   ####     ##       ##.  .##  ##.  .## 
-  :####:    ##       ###  ###  ###  ### 
-  ##::##    ##       :#######  :####### 
- ###  ###   ##        :###.##   :###.## 
-                                        
-                                        
-                                        
-                                        
-
 <!DOCTYPE html>
-<html>
+<html lang="tr">
 <head>
-    <title>kyle</title>
-    <style>
-        body {
-            background-color: #000; 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 90vh;
-            margin: 0;
-            color: white;
-            font-family: Arial, sans-serif;
-        }
-        img {
-            max-width: 90%; 
-            height: auto;
-            border-radius: 10px;
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>XRDD</title>
+<style>
+  html, body { height: 100%; margin: 0; background: #000; }
+  body { display: grid; place-items: center; }
+
+  #xrdd-ascii {
+    margin: 0;
+    color: #fff;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, "DejaVu Sans Mono", monospace;
+    /* 140 sutun: font boyutu ekran genisligine gore olceklenir */
+    font-size: calc(min(94vw, 1100px) / 84.0);
+    line-height: 1.2;
+    white-space: pre;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    user-select: none;
+  }
+</style>
 </head>
 <body>
-    <img src="xrdd.png">
+  <pre id="xrdd-ascii" role="img" aria-label="XRDD"></pre>
+  <script src="xrdd-ascii.js"></script>
 </body>
 </html>
