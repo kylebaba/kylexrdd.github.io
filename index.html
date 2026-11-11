@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>XRDD</title>
+<link id="favicon" rel="icon" type="image/png" href="favicon.png">
 <style>
   html, body { height: 100%; margin: 0; background: #000; }
   body { display: grid; place-items: center; }
@@ -25,5 +26,23 @@
 <body>
   <pre id="xrdd-ascii" role="img" aria-label="XRDD"></pre>
   <script src="xrdd-ascii.js"></script>
+  <script>
+    // Sekme ikonu iki logo arasinda doner: XRD <-> xrd
+    (function () {
+      var ICONS = ["favicon.png", "favicon-small.png"];
+      var MS = 800; // her ikonun ekranda kalma suresi (ms)
+      if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      ICONS.forEach(function (src) { new Image().src = src; }); // onceden yukle
+      var i = 0;
+      setInterval(function () {
+        i = (i + 1) % ICONS.length;
+        var link = document.createElement("link");
+        link.id = "favicon"; link.rel = "icon"; link.type = "image/png"; link.href = ICONS[i];
+        var old = document.getElementById("favicon");
+        if (old) old.parentNode.removeChild(old);
+        document.head.appendChild(link);
+      }, MS);
+    })();
+  </script>
 </body>
 </html>
